@@ -1,0 +1,6 @@
+sudo yum install -y amazon-linux-extras
+yum install update
+amazon-linux-extras
+yum install update
+sudo amazon-linux-extras install ansible2
+sudo amazon-linux-extras install python3.8
