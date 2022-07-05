@@ -4,3 +4,24 @@ amazon-linux-extras
 yum install update
 sudo amazon-linux-extras install ansible2
 sudo amazon-linux-extras install python3.8
+===============================================
+adduser xyz
+passwd xyz
+===============================================
+# visudo ---ec2-user---ROOT [ master and nodes]
+root ( xyz ALL=ALL NOPASSWD = ALL
+===============================================
+# vi /etc/ssh/sshd_config -----EC2-USER-------ROOT [ master and nodes ]
+AUTHENTICATION
+enabal = permit root login
+enable = passwdord authentication
+===============================================
+RESTART [ master and nodes ] --ec2-use--
+service sshd restart
+service sshd status
+===============================================
+SWITCH TO CREATED USER NOW IN MASTER ( create ssh connection )
+> ssh-keygen
+> ssh-copyid username@ipaddress
+================================================
+
