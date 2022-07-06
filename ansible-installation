@@ -9,7 +9,7 @@ adduser xyz
 passwd xyz
 ===============================================
 # visudo ---ec2-user---ROOT [ master and nodes]
-root ( xyz ALL=ALL NOPASSWD = ALL
+root ((( xyz ALL=ALL NOPASSWD: ALL )))
 ===============================================
 # vi /etc/ssh/sshd_config -----EC2-USER-------ROOT [ master and nodes ]
 AUTHENTICATION
