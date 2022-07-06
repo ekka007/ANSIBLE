@@ -4,22 +4,19 @@ amazon-linux-extras
 yum install update
 sudo amazon-linux-extras install ansible2
 sudo amazon-linux-extras install python3.8
-===============================================
-adduser xyz
-passwd xyz
-===============================================
-vim /etc/ansible/hosts ------> master node
-add node ip ------> master
-
-===============================================
+=============================================== ADD USER AND GIVE SUDO PREVILAGE============================================================================
+adduser xyz            |  # visudo
+passwd xyz             |  xyz ALL=ALL NOPASSWD: ALL
+=============================================== ONLY IN MASTER===============================================================================================
 vim /etc/ansible/ansible.cfg
 uncomment ===  inventory      = /etc/ansible/hosts
 uncomment ===  sudo_user      = root
-================================================
-# visudo ---ec2-user---ROOT [ master and nodes]
-root ((( xyz ALL=ALL NOPASSWD: ALL )))
+
+=============================================== copy client nodes pvt-ip address to MASTER NODE ===============================================================
+vim /etc/ansible/hosts ------> only master node
+add node ip ------> only master
 ===============================================
-# vi /etc/ssh/sshd_config -----EC2-USER-------ROOT [ master and nodes ]
+# vi /etc/ssh/sshd_config -----EC2-USER-------ROOT [ MASTER and NODE ]
 AUTHENTICATION
 enabal = permit root login
 enable = passwdord authentication
