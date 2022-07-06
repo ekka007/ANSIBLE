@@ -8,6 +8,14 @@ sudo amazon-linux-extras install python3.8
 adduser xyz
 passwd xyz
 ===============================================
+vim /etc/ansible/hosts ------> master node
+add node ip ------> master
+
+===============================================
+vim /etc/ansible/ansible.cfg
+uncomment ===  inventory      = /etc/ansible/hosts
+uncomment ===  sudo_user      = root
+================================================
 # visudo ---ec2-user---ROOT [ master and nodes]
 root ((( xyz ALL=ALL NOPASSWD: ALL )))
 ===============================================
