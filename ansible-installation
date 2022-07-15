@@ -27,6 +27,6 @@ service sshd status
 ===============================================
 SWITCH TO CREATED USER NOW IN MASTER ( create ssh connection )
 > ssh-keygen
-> ssh-copyid username@ipaddress
+> ssh-copy-id username@ipaddress
 ================================================
 
