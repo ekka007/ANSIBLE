@@ -1,0 +1,10 @@
+sudo adduser username
+
+sudo usermod -aG sudo username
+
+sudo vi /etc/ssh/sshd_config  =   #passwordauthentication yes
+
+save and exit
+=========================================
+
+sudo systemctl restart sshd
