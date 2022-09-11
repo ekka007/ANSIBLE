@@ -35,3 +35,5 @@ ssh xyz@ip................
 ================================================
 COMMANDS
 ansible all -u ansadmin -m ping
+
+ansible-playbook -u ansadmin packages.yml
