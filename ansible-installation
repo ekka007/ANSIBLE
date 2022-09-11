@@ -31,3 +31,7 @@ SWITCH TO CREATED USER NOW IN MASTER ( create ssh connection )
 ================================================
 NOW LOGIN
 ssh xyz@ip................
+
+================================================
+COMMANDS
+ansible all -u ansadmin -m ping
