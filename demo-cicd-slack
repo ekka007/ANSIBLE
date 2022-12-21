@@ -1,0 +1,32 @@
+// First, you need to install the Slack plugin on your Jenkins instance.
+// author "saroj_ekka"
+// Define the Slack channel to which you want to send the notification.
+def slackChannel = '#devopscicd'
+
+// Define the Jenkins pipeline.
+pipeline {
+    agent any
+
+    stages {
+        stage('CHECKOUT') {
+            steps {
+                git 'https://github.com/ekka007/star-agile-project-demo.git'
+            }
+        }
+        stage('CODE-BUILD') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+    }
+    post {
+        success {
+            // Send a notification to Slack when the build is successful.
+            slackSend color: '#00FF00', message: "Build completed successfully!", channel: slackChannel
+        }
+        failure {
+            // Send a notification to Slack when the build fails.
+            slackSend color: '#FF0000', message: "Build failed!", channel: slackChannel
+        }
+    }
+}
